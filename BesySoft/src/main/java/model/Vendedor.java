@@ -10,7 +10,6 @@ public class Vendedor {
         this.nombre = nombre;
         this.sueldo = sueldo;
     }
-
-
 }
+
 
