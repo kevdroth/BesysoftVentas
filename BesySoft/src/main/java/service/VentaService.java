@@ -12,15 +12,19 @@ public class VentaService {
 
     public void guardarVenta(Producto producto, Vendedor vendedor, Integer cantidad) {
         Venta venta = new Venta(producto, vendedor, cantidad);
-
         this.ventas.add(venta);
     }
 
     public Double getTotalComisionPorVendedor(Vendedor vendedor) {
-        return this.ventas
-                .stream()
-                .filter(v -> v.getVendedor().equals(vendedor))
-                .map(v -> v.getComision())
-                .reduce(0d, Double::sum);
+        try {
+            return this.ventas
+                    .stream()
+                    .filter(v -> v.getVendedor().equals(vendedor))
+                    .map(v -> v.getComision())
+                    .reduce(0d, Double::sum);
+        } catch (Exception e) {
+            System.out.println("El vendedor no existe");
+        }
+        return null;
     }
 }

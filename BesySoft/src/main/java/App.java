@@ -1,10 +1,12 @@
 import model.Categoria;
 import model.Producto;
 import model.Vendedor;
+import service.ProductoService;
 import service.VentaService;
 
 public class App {
     private static VentaService ventaService = new VentaService();
+    private static ProductoService productoService = new
     public static void main(String[] args) {
         Categoria lacteo = new Categoria(1, "Lacteo");
         Categoria carne = new Categoria(2, "Carne");
@@ -24,8 +26,10 @@ public class App {
 
         ventaService.guardarVenta(cafe, pablo, 5);
 
-        Double comisionPablo = ventaService.getTotalComisionPorVendedor(pablo);
+        Double comisionPablo = ventaService.getTotalComisionPorVendedor(juan);
 
         System.out.println(comisionPablo);
+
+
     }
 }
