@@ -6,7 +6,7 @@ import service.VentaService;
 
 public class App {
     private static VentaService ventaService = new VentaService();
-    private static ProductoService productoService = new
+    private static ProductoService productoService = new ProductoService();
     public static void main(String[] args) {
         Categoria lacteo = new Categoria(1, "Lacteo");
         Categoria carne = new Categoria(2, "Carne");
